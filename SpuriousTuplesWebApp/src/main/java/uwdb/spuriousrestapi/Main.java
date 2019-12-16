@@ -53,7 +53,7 @@ public class Main {
             if (portNum < 0 || portNum > 65535) {
                 throw new IllegalArgumentException();
             }
-            BASE_URI = "http://localhost:" + portNum + "/";
+            BASE_URI = "http://0.0.0.0:" + portNum + "/";
             try (NewSmallDBInMemory db = new NewSmallDBInMemory(args[0], Integer.parseInt(args[1]),
                     Boolean.valueOf(args[2]));) {
                 server = startServer(db);
@@ -66,7 +66,7 @@ public class Main {
                         BASE_URI));
                 log.info(String.format(
                         "REST API gateway swagger can be accessed by the url \n    %sswagger/\nHit enter to stop server...",
-                        BASE_URI));
+                        "http://localhost:" + portNum + "/"));
                 System.in.read();
             } catch (Exception e) {
                 if (e instanceof IllegalArgumentException) {
