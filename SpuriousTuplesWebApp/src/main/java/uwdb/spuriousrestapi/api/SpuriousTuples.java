@@ -111,7 +111,7 @@ public class SpuriousTuples {
     @Path("/decom")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @Operation(tags = {"Spurious Tuples"}, summary = "Asynchronous Decomposition Test",
+    @Operation(tags = {"Spurious Tuples"}, summary = "Synchronous Decomposition Test",
             description = "Synchronously get decomposition information, will wait until finish, failed or canceled. Limited to 5 minutes.")
     @ApiResponse(responseCode = "400", description = "Invalid set of clusters",
             content = @Content(mediaType = "application/json",
@@ -190,7 +190,7 @@ public class SpuriousTuples {
     @Path("/cancel")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @Operation(tags = {"Spurious Tuples"}, summary = "Asynchronous Decomposition Test",
+    @Operation(tags = {"Spurious Tuples"}, summary = "Get DB Information",
             description = "Synchronously get decomposition information, will wait until finish, failed or canceled. Limited to 5 minutes.")
     @ApiResponse(responseCode = "400", description = "Invalid set of clusters",
             content = @Content(mediaType = "application/json",
