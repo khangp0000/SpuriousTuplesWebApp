@@ -9,6 +9,13 @@
     <version>1.0-SNAPSHOT</version>
     <name>SpuriousTuplesWebApp</name>
 
+    <!-- <parent>
+        <groupId>uwdb</groupId>
+        <artifactId>SpuriousTuplesWebAppParent</artifactId>
+        <version>1.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent> -->
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -20,9 +27,11 @@
             </dependency>
 
             <dependency>
-                <groupId>uwdb</groupId>
-                <artifactId>MiningMVDs</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>2.10.1</version>
+                <scope>import</scope>
+                <type>pom</type>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -51,6 +60,12 @@
         </dependency>
 
         <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-grizzly2-servlet</artifactId>
+            <version>${version.jersey}</version>
+        </dependency>
+
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
@@ -63,6 +78,52 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
+        <!-- Jackson modules -->
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-parameter-names</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jdk8</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+        </dependency>
+
+        <!-- LOGGING -->
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4jVersion}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- swagger -->
+        <!-- https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-jaxrs2 -->
+        <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-jaxrs2</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+        <!-- 
+        <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-jaxrs2-servlet-initializer</artifactId>
+            <version>2.1.0</version>
+        </dependency> -->
     </dependencies>
 
     <build>
@@ -89,10 +150,16 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>uwdb.Main</mainClass>
+                    <mainClass>uwdb.spuriousrestapi.Main</mainClass>
+                    <arguments>
+                        <argument>testdb/nursery.csv</argument>
+                        <argument>9</argument>
+                        <argument>false</argument>
+                        <argument>9876</argument>
+                    </arguments>
                 </configuration>
             </plugin>
-            
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -118,5 +185,6 @@
         <jersey.version>2.29.1</jersey.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.jersey>2.29.1</version.jersey>
+        <slf4jVersion>1.7.29</slf4jVersion>
     </properties>
 </project>
