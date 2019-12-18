@@ -6,7 +6,7 @@
     <groupId>uwdb</groupId>
     <artifactId>SpuriousTuplesWebApp</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0-SQLite</version>
     <name>SpuriousTuplesWebApp</name>
 
     <!-- <parent>
