@@ -1,4 +1,4 @@
 cd RelationalDecomposition
 mvn install
 cd ../SpuriousTuplesWebApp
-mvn exec:java
+mvn compile exec:java
