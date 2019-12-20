@@ -6,7 +6,7 @@
     <groupId>uwdb</groupId>
     <artifactId>SpuriousTuplesWebApp</artifactId>
     <packaging>jar</packaging>
-    <version>1.0-SQLite</version>
+    <version>1.0-SNAPSHOT</version>
     <name>SpuriousTuplesWebApp</name>
 
     <!-- <parent>
@@ -75,7 +75,7 @@
         <dependency>
             <groupId>uwdb</groupId>
             <artifactId>MiningMVDs</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0-SQLite</version>
         </dependency>
 
         <!-- Jackson modules -->
