@@ -1,3 +1,5 @@
 [submodule "RelationalDecomposition"]
 	path = RelationalDecomposition
 	url = git@github.com:khangp0000/RelationalDecomposition.git
+[submodule "Submod"]
+	branch = SQLite
