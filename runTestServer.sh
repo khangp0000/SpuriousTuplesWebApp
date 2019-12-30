@@ -1,5 +1,7 @@
 
 #!/bin/bash
+# make sure to download dependencies by 
+#     git submodule update --init --recursive
 # usage: runTestServer.sh <database.csv> <number of attributes> <has header (true/false)> <port number>
 # example: ./runTestServer.sh  adult.csv 15 false
 # with no argument, it is ran with stock "nursery.csv 9 false 9876"
