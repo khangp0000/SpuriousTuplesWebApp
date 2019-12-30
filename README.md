@@ -3,7 +3,7 @@ Make sure to have submodule download and updated using:
 ```
 git submodule update --init --recursive
 ```
-## Run using script for linux
+## Run using script for linux (require maven)
 ```
 runTestServer.sh <database.csv> <number of attributes> <has header (true/false)> <port number>
 ```
