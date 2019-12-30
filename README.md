@@ -17,7 +17,7 @@ mvn install
 Then run the server:
 ```
 cd SpuriousTuplesWebApp
-mvn exec:java <database.csv> <number of attributes> <has header (true/false)> <port number>
+mvn exec:java -Dexec.args="<database.csv> <number of attributes> <has header (true/false)> <port number>"
 ```
 ## Run using jar with dependencies
 Download on release page of github.
