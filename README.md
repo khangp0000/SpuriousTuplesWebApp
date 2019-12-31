@@ -3,7 +3,7 @@ Make sure to have submodule download and updated using:
 ```
 git submodule update --init --recursive
 ```
-## Run using script for linux
+## Run using script for linux (require maven)
 ```
 runTestServer.sh <database.csv> <number of attributes> <has header (true/false)> <port number>
 ```
@@ -17,7 +17,7 @@ mvn install
 Then run the server:
 ```
 cd SpuriousTuplesWebApp
-mvn exec:java <database.csv> <number of attributes> <has header (true/false)> <port number>
+mvn exec:java -Dexec.args="<database.csv> <number of attributes> <has header (true/false)> <port number>"
 ```
 ## Run using jar with dependencies
 Download on release page of github.
